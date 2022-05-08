@@ -1,0 +1,26 @@
+{
+    "name": "quiz_bts",
+    "version": "1.0.0",
+    "description": "A quiz made with Javascript.\r A quiz created by jimmy and pierre.\r To make it work you need wamp or xampp etc.\r If you want to play it you can configure the question in the json file and then launch the website and play the Quiz",
+    "main": "script.js",
+    "scripts": {
+        "start": "npm run open",
+        "open": "concurrently \"http-server -a localhost -p 1234\" \"open http://localhost:1234/build\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Doxteur/Quiz_BTS.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Doxteur/Quiz_BTS/issues"
+    },
+    "homepage": "https://github.com/Doxteur/Quiz_BTS#readme",
+    "devDependencies": {
+        "@types/jquery": "^3.5.5",
+        "concurrently": "^5.3.0",
+        "http-server": "^0.12.3"
+    },
+    "dependencies": {}
+}

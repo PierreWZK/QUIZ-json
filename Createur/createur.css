@@ -1,0 +1,148 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+body {
+    background-color: #f7e8d8d5;
+}
+
+#connect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 35px;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+
+#connect input {
+    height: 25px;
+    padding: 5px;
+    font-size: 25px;
+    margin: 15px;
+}
+
+#connect h3 {
+    text-align: center;
+    cursor: pointer;
+}
+
+#connect h3:hover {
+    color: red;
+}
+
+#wrongPassword {
+    display: none;
+    text-align: center;
+}
+
+button:not(#hamburger) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #205D76;
+    color: white;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 45px;
+    padding: 15px;
+    border-radius: 55px;
+}
+
+#hamburger {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    transition: transform 1s;
+    z-index: 150;
+}
+
+#leftHeader {
+    z-index: 150;
+    position: absolute;
+    display: table;
+    height: 100vh;
+    background-color: #3A7BDE;
+    transform: translateX(-200px);
+    transition: transform 1s;
+    top: 0;
+}
+
+#leftHeader.active {
+    transition: transform 1s;
+    transform: translateX(0px);
+}
+
+#hamburger.active {
+    transition: transform 1s;
+    transform: translateX(135px);
+}
+
+#inner_header {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#inner_header h1 {
+    text-align: center;
+    margin: 15px 0 15px 0;
+    padding: 15px;
+    background-color: #205D76;
+    color: white;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#title {
+    color: white;
+    position: absolute;
+    margin: 30px;
+    font-size: 45px;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#title span {
+    color: #FFC122;
+}
+
+#allQuestion {
+    background-color: slateblue;
+    position: absolute;
+    right: 0;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#allQuestion div {
+    width: 350px;
+    min-height: 150px;
+    margin: 20px;
+    background-color: #62D4D4;
+    color: white;
+    font-family: sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+#allQuestion h1 {
+    font-size: 15px;
+}
+
+#allQuestion h2 {
+    font-size: 10px;
+}
+
+span {
+    color: red;
+}

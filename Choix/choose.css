@@ -1,0 +1,477 @@
+/* Color palette used : 
+#FAF8DA -> Beige
+#205D76 -> Bleu Foncé
+#FFC122 -> Orange
+#62D4D4 -> Bleu Clair
+#FFA09E -> Rose
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+
+/* Choose */
+
+#container {
+    width: 100%;
+    height: 100%;
+    background-image: url(../Images/background.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#gauche {
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 100%;
+}
+
+#gauche h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    color: white;
+    transition: font-size 0.5s ease-in-out;
+}
+
+#container h1:hover {
+    cursor: pointer;
+    font-size: 110px;
+}
+
+#droite {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 100%;
+}
+
+#droite h1 {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    font-size: 100px;
+    color: white;
+}
+
+#wrongJson {
+    display: none;
+    width: 100%;
+    font-size: 30px;
+    color: #FFC122;
+    font-family: sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#select {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+}
+
+#select h1 {
+    cursor: pointer;
+    margin-left: 35px;
+    margin-right: 35px;
+    color: white;
+    font-family: "Titillium Web";
+}
+
+#select h1:hover {
+    transition: ease-in-out 1s;
+    transform: scale(1.1);
+    border-radius: 50px;
+}
+
+#canvas-basic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+a {
+    color: none;
+    text-decoration: none;
+}
+
+div a {
+    color: white;
+}
+
+
+/* Implementation author : Zach Sauzier*/
+
+html,
+body {
+    text-align: center;
+    height: 100%;
+}
+
+.svg-wrapper {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    width: 420px;
+    cursor: pointer;
+}
+
+.shape {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+    fill: transparent;
+    stroke: #FFC122;
+    border-bottom: 5px solid black;
+    transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+}
+
+.text {
+    font-family: sans-serif;
+    font-size: 72px;
+    line-height: 9px;
+    letter-spacing: 8px;
+    color: #fff;
+    top: -55px;
+    position: relative;
+}
+
+.svg-wrapper:hover .shape {
+    stroke-width: 8px;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 1050;
+}
+
+
+/* Fin implementation */
+
+#Rejouer {
+    padding-top: 5%;
+    font-size: 50px;
+    color: #FFF;
+}
+
+#Rejouer:hover {
+    color: #E94D4D;
+}
+
+#ecranFin {
+    text-align: center;
+    color: #205D76;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Titillium Web";
+}
+
+#finText {
+    font-size: 60px;
+}
+
+button:not(#hamburger) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #205D76;
+    color: white;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 45px;
+    padding: 15px;
+    border-radius: 55px;
+}
+
+#hamburger {
+    position: absolute;
+    left: 0;
+    width: 50px;
+    height: 45px;
+    margin: 20px;
+    transition: transform 1s;
+    z-index: 150;
+}
+
+#leftHeader {
+    z-index: 150;
+    position: absolute;
+    display: table;
+    height: 100vh;
+    background-color: #3A7BDE;
+    transform: translateX(-200px);
+    transition: transform 1s;
+}
+
+#leftHeader.active {
+    transition: transform 1s;
+    transform: translateX(0px);
+}
+
+#hamburger.active {
+    transition: transform 1s;
+    transform: translateX(145px);
+}
+
+#inner_header {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#inner_header h1 {
+    text-align: center;
+    margin: 15px 0 15px 0;
+    padding: 15px;
+    background-color: #205D76;
+    color: white;
+    font-size: 35px;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#title {
+    color: white;
+    position: absolute;
+    margin: 30px;
+    font-size: 45px;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#title span {
+    color: #FFC122;
+}
+
+#content {
+    display: none;
+    position: relative;
+}
+
+#question {
+    font-family: 'Titillium Web', sans-serif;
+    padding-top: 7%;
+    font-size: 35px;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+}
+
+#question h2 {
+    padding: 35px;
+    background-color: white;
+    border: #4ACBDE 10px solid;
+    color: black;
+}
+
+#reponse {
+    margin-top: 3.5%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#reponse div {
+    cursor: pointer;
+    margin: 50px 150px 0 150px;
+    width: 350px;
+    height: 80px;
+    border-radius: 10px;
+    overflow-y: auto;
+    scroll-margin: auto;
+    display: table;
+    z-index: 45;
+}
+
+@media screen and (max-width: 1624px) {
+    #question {
+        padding-top: 2%;
+    }
+    #reponse {
+        margin-top: 2%;
+    }
+}
+
+#l1:hover {
+    background-color: #E94D4D !important;
+    border-radius: 50px;
+}
+
+#l2:hover {
+    border-radius: 50px;
+    background-color: #4ACBDE !important;
+}
+
+#l3:hover {
+    border-radius: 50px;
+    background-color: #E7DF27 !important;
+}
+
+#l4:hover {
+    border-radius: 50px;
+    background-color: #8211B8 !important;
+}
+
+#Valide:hover {
+    background-color: #62D62C;
+    border-radius: 50px;
+}
+
+#reponse div {
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: #4ACBDE;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+#reponse h1 {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 30px;
+    text-align: center;
+    color: black;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#reponsebonne {
+    background-color: green;
+    padding: 10px;
+    width: 250px;
+    height: 10%;
+    position: absolute;
+    bottom: 2%;
+    left: 15%;
+    font-size: 12px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Titillium Web', sans-serif;
+    display: none;
+    transition: display ease-in-out 0.5s;
+}
+
+#reponsebonne.anim {
+    display: table;
+    animation: linear opacity 1s alternate;
+}
+
+@keyframes opacity {
+    0% {
+        transform: translate(-100%);
+        opacity: 0;
+    }
+    100% {
+        opacity: 50%;
+    }
+}
+
+#reponsebonne h1 {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    height: 10%;
+    width: 100%;
+    display: table;
+}
+
+footer div {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: end;
+}
+
+footer img {
+    cursor: pointer;
+    margin-right: 15px;
+    width: 50px;
+}
+
+.smaller {
+    height: 50px;
+    width: 40px;
+}
+
+#themes {
+    transform: scale(2);
+    margin: 55px;
+    background-color: #07C0F2;
+}
+
+#themes option {
+    font-size: 20px;
+}
+
+option:after {
+    background-color: white;
+    font-size: 35px;
+}
+
+#themeSelector {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#themeChoose {
+    color: white;
+    font-size: 35px;
+    transition: all 1s;
+    cursor: pointer;
+    border: solid transparent 5px;
+}
+
+#themeChoose:hover {
+    color: red;
+    border: solid #4ACBDE 5px;
+}
+
+#titreTheme {
+    display: none;
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 55px;
+    font-weight: bold;
+    font-family: sans-serif;
+    padding-top: 300px;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Poppins", sans-serif;
+}
+
+#nombreQuestion {
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+    font-size: 40px;
+    color: white;
+}
